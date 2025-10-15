@@ -47,7 +47,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  const { id } = req.params;
+  const {id} = req.params;
   let orders = readOrders();
   const order = orders.find(o => o.id === Number(id));
   if (!order) return res.status(404).json({ error: 'Order not found' });
